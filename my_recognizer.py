@@ -44,7 +44,7 @@ def recognize(models: dict, test_set: SinglesData):
             
         probabilities.append(probability)
         #probabilities is now a word:prob pair
-        guess = max([(k,v) for k,v in probability.items()])[0]
+        guess = max([(v,k) for k,v in probability.items()])[1]
         guesses.append(guess)
         
     return (probabilities, guesses)
